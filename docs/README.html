@@ -12,7 +12,7 @@
 
 
 
-<title>data.utf8.md</title>
+<title>README.utf8.md</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -28,8 +28,6 @@
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
 <script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
-<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -399,69 +397,54 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Data</h1>
 
 </div>
 
 
-<div id="raw-data" class="section level2">
-<h2>Raw data</h2>
-<p>The data were obtained from xx and were organized in xx excel/csv files. The example file is in the wide format where each day of assessment is in a different column, etc.</p>
+<div id="research-compendium-website" class="section level1">
+<h1>Research compendium website</h1>
+<p>This repository contains the development version of RMarkdown code and data example files to customize and generate a responsive website for a research compendium - a compilation of data and computer code to reproduce the results of a publication.</p>
+<p>Website example: <a href="https://emdelponte.github.io/research-compendium-website/" class="uri">https://emdelponte.github.io/research-compendium-website/</a></p>
 </div>
-<div id="data-wrangling" class="section level2">
-<h2>Data wrangling</h2>
-<p>The original files were modified as following. The names of the variables were changed to.. The original wide format was retained and will be transformed using the dplyr functions, etc.</p>
+<div id="authors-of-this-repository" class="section level1">
+<h1>Authors of this repository</h1>
+<p>Emerson Del Ponte (<a href="mailto:delponte@ufv.br" class="email">delponte@ufv.br</a>)</p>
 </div>
-<div id="glimpse" class="section level2">
-<h2>Glimpse</h2>
-<pre class="r"><code>library(tidyverse)
-data &lt;- read_delim(&quot;data/data.csv&quot;, delim = &quot;;&quot;)
-glimpse(data)</code></pre>
-<pre><code>## Observations: 33
-## Variables: 6
-## $ Dia        &lt;dbl&gt; 0, 5, 8, 15, 20, 26, 30, 36, 40, 44, 50, 0, 5, 8, 1...
-## $ Tratamento &lt;chr&gt; &quot;Testemunha&quot;, &quot;Testemunha&quot;, &quot;Testemunha&quot;, &quot;Testemun...
-## $ bloco1     &lt;dbl&gt; 0, 3, 3, 5, 8, 28, 50, 75, 80, 93, 98, 0, 3, 5, 5, ...
-## $ bloco2     &lt;dbl&gt; 0, 3, 3, 15, 20, 35, 50, 80, 85, 98, 100, 0, 3, 5, ...
-## $ bloco3     &lt;dbl&gt; 3, 3, 3, 5, 15, 23, 30, 40, 60, 95, 100, 5, 5, 5, 5...
-## $ bloco4     &lt;dbl&gt; 0, 0, 3, 10, 10, 18, 43, 53, 70, 95, 100, 0, 3, 5, ...</code></pre>
-</div>
-<div id="description-of-variables" class="section level2">
-<h2>Description of variables</h2>
+<div id="overview-of-contents" class="section level1">
+<h1>Overview of contents</h1>
+<p>The root of the repository contains files that set the website structure (menus, etc.) and style (<code>.yml</code>, <code>.css</code>), as well as the citation/reference style. There are four <code>.Rmd</code> files to generate each website page, which are separated according to the convention of a research compendium.</p>
 <ul>
-<li>Variable1:
+<li><code>index.Rmd</code>: Describe the research, objectives, authorship, etc.</li>
+<li><code>data.Rmd</code>: Contains the raw or raw-derived data.</li>
+<li><code>code.Rmd</code>: Produces the main analysis report with a template that follows the Wickham and Grolemund’s <a href="http://r4ds.had.co.nz/introduction.html">model for a data science project</a>: import -&gt; tidy -&gt; transform-visualize-model -&gt; communicate</li>
+<li><code>manuscript.Rmd</code>: An example html manuscript template. It is intended to work as a pre-print version of the paper.</li>
+</ul>
+<p>There are three basic folders:</p>
 <ul>
-<li>Description</li>
-<li>Type: character</li>
-<li>Unit</li>
-</ul></li>
-<li>Variable2:
-<ul>
-<li>Description</li>
-<li>Type: integer</li>
-<li>Unit</li>
-</ul></li>
-<li>Variable3:
-<ul>
-<li>Description</li>
-<li>Type: double</li>
-<li>Unit:</li>
-</ul></li>
+<li><code>data/</code> - raw and further processed data.</li>
+<li><code>docs/</code> - html files of the research compendia with all text and figures.</li>
+<li><code>supp/</code> - supplementary files that are not data or R codes.</li>
 </ul>
 </div>
-<div id="quick-view" class="section level2">
-<h2>Quick view</h2>
-<pre class="r"><code>data</code></pre>
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["Dia"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["Tratamento"],"name":[2],"type":["chr"],"align":["left"]},{"label":["bloco1"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["bloco2"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["bloco3"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["bloco4"],"name":[6],"type":["dbl"],"align":["right"]}],"data":[{"1":"0","2":"Testemunha","3":"0","4":"0","5":"3","6":"0"},{"1":"5","2":"Testemunha","3":"3","4":"3","5":"3","6":"0"},{"1":"8","2":"Testemunha","3":"3","4":"3","5":"3","6":"3"},{"1":"15","2":"Testemunha","3":"5","4":"15","5":"5","6":"10"},{"1":"20","2":"Testemunha","3":"8","4":"20","5":"15","6":"10"},{"1":"26","2":"Testemunha","3":"28","4":"35","5":"23","6":"18"},{"1":"30","2":"Testemunha","3":"50","4":"50","5":"30","6":"43"},{"1":"36","2":"Testemunha","3":"75","4":"80","5":"40","6":"53"},{"1":"40","2":"Testemunha","3":"80","4":"85","5":"60","6":"70"},{"1":"44","2":"Testemunha","3":"93","4":"98","5":"95","6":"95"},{"1":"50","2":"Testemunha","3":"98","4":"100","5":"100","6":"100"},{"1":"0","2":"MM","3":"0","4":"0","5":"5","6":"0"},{"1":"5","2":"MM","3":"3","4":"3","5":"5","6":"3"},{"1":"8","2":"MM","3":"5","4":"5","5":"5","6":"5"},{"1":"15","2":"MM","3":"5","4":"5","5":"5","6":"5"},{"1":"20","2":"MM","3":"5","4":"5","5":"5","6":"5"},{"1":"26","2":"MM","3":"15","4":"5","5":"5","6":"5"},{"1":"30","2":"MM","3":"20","4":"5","5":"5","6":"5"},{"1":"36","2":"MM","3":"20","4":"8","5":"5","6":"5"},{"1":"40","2":"MM","3":"20","4":"10","5":"5","6":"5"},{"1":"44","2":"MM","3":"21","4":"12","5":"13","6":"15"},{"1":"50","2":"MM","3":"23","4":"15","5":"20","6":"20"},{"1":"0","2":"M","3":"1","4":"0","5":"0","6":"0"},{"1":"5","2":"M","3":"1","4":"3","5":"2","6":"3"},{"1":"8","2":"M","3":"3","4":"5","5":"4","6":"4"},{"1":"15","2":"M","3":"5","4":"10","5":"5","6":"8"},{"1":"20","2":"M","3":"6","4":"13","5":"10","6":"8"},{"1":"26","2":"M","3":"21","4":"20","5":"14","6":"11"},{"1":"30","2":"M","3":"35","4":"28","5":"18","6":"24"},{"1":"36","2":"M","3":"48","4":"43","5":"23","6":"26"},{"1":"40","2":"M","3":"50","4":"48","5":"33","6":"38"},{"1":"44","2":"M","3":"57","4":"55","5":"54","6":"55"},{"1":"50","2":"M","3":"61","4":"58","5":"60","6":"60"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
+<div id="licenses" class="section level1">
+<h1>Licenses</h1>
+<p>Manuscript: <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a></p>
+<p>Code: <a href="https://opensource.org/licenses/MIT">MIT</a> year: 2017, copyright holder: Emerson Del Ponte</p>
+<p>Data: [CC-0[(<a href="https://creativecommons.org/publicdomain/zero/1.0/" class="uri">https://creativecommons.org/publicdomain/zero/1.0/</a>)] attribution requested in reuse</p>
 </div>
+<div id="credits" class="section level1">
+<h1>Credits</h1>
+<p>This compendium was developed based on the ideas and examples in other resources which suggest a research compendium structured as an R package. However, this is not an R package as I focused mainly on four main Rmd files that are used to generatethe html output of the compendium, but there there is clear separation of the data and the output files.</p>
+<p><a href="https://doi.org/10.7287/peerj.preprints.3192v1">Marwick et al. 2017</a></p>
+<p><a href="https://github.com/jhollist/manuscriptPackage">jhollist manuscriptpackage</a></p>
+<p><a href="https://github.com/cboettig/template">cboettig template</a></p>
+<p><a href="https://github.com/benmarwick/researchcompendium">benmarwick researchcompendium</a></p>
+<p><a href="Reproducibility_in_Plant_Pathology">Reproducibility_in_Plant_Pathology</a></p>
+<p><a href="http://r4ds.had.co.nz/">R for Data Science</a></p>
 </div>
-<div id="download" class="section level2">
-<h2>Download</h2>
-<p>The data are deposited in xx public repositories where they can be downloaded. Check on each data repository the policies regarding data use and citation.</p>
-<p><img src = "https://osf.io/static/img/circle_logo.png" width = "25"> <a href="DOI%2010.17605/OSF.IO/7D3CH"></a></p>
+<div id="contact" class="section level1">
+<h1>Contact</h1>
+<p>Emerson Del Ponte, Associate Professor, Departmento de Fitopatologia, Universidade Federal de Viçosa, Viçosa, MG Brazil (+55) 31 38991103 <a href="mailto:delponte@ufv.br" class="email">delponte@ufv.br</a> Twitter: <span class="citation">@emdelponte</span></p>
 </div>
 
 
